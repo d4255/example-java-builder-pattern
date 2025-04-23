@@ -4,41 +4,41 @@ public record Song(
     String id,
     String title,
     String genre,
-    Date releaseDate,
-    Time trackLength,
+    Integer publishYear,
+    String trackLength,
     String album,
     String writer,
     String producer) 
 {
-    public static class SongBuilder {
+    public static class Builder {
         private String id;
         private String title;
         private String genre;
-        private Date releaseDate;
-        private Time trackLength;
+        private Integer publishYear;
+        private String trackLength;
         private String album;
 
-        public SongBuilder withId(String id) {
+        public Builder withId(String id) {
             this.id = id;
         }
 
-        public SongBuilder withTitle(String title) {
+        public Builder withTitle(String title) {
             this.title = title;
         }
 
-        public SongBuilder withGenre(String genre) {
+        public Builder withGenre(String genre) {
             this.genre = genre;
         }
 
-        public SongBuilder withReleaseDate(Date releaseDate) {
-            this.releaseDate = releaseDate;
+        public Builder withPublishYear(Integer publishYear) {
+            this.publishYear = publishYear;
         }
 
-        public SongBuilder withTrackLength(Time trackLength) {
+        public Builder withTrackLength(String trackLength) {
             this.trackLength = trackLength;
         }
 
-        public SongBuilder withAlbum(String album) {
+        public Builder withAlbum(String album) {
             this.album = album;
         }
 
@@ -47,7 +47,7 @@ public record Song(
                 this.id, 
                 this.title, 
                 this.genre, 
-                this.releaseDate, 
+                this.publishYear, 
                 this.trackLength, 
                 this.album);
         }
