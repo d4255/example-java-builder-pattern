@@ -7,7 +7,7 @@ public record Song(
     Integer year,
     Integer duration) 
 {
-    public static class Builder {
+    public static class SongBuilder {
         private String id;
         private String title;
         private String artist;
