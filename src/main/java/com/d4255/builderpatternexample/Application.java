@@ -7,7 +7,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		Song song = new Song.Builder().withId("1")
+							  .withTitle("The Chain")
+							  .withArtist("Fleetwood Mac")
+							  .withAlbum("Rumours")
+							  .withGenre("Rock")
+							  .withYear(1977)
+							  .withDuration(268)
+							  .build();
+
 	}
 
 }

@@ -1,55 +1,65 @@
-import javax.swing.SortingFocusTraversalPolicy;
-
 public record Song(
     String id,
     String title,
-    String genre,
-    Date releaseDate,
-    Time trackLength,
+    String artist,
     String album,
-    String writer,
-    String producer) 
+    String genre,
+    Integer year,
+    Integer duration) 
 {
-    public static class SongBuilder {
+    public static class Builder {
         private String id;
         private String title;
-        private String genre;
-        private Date releaseDate;
-        private Time trackLength;
+        private String artist;
         private String album;
+        private String genre;
+        private Integer year;
+        private Integer duration;
 
-        public SongBuilder withId(String id) {
+        public Builder withId(String id) {
             this.id = id;
+            return this;
         }
 
-        public SongBuilder withTitle(String title) {
+        public Builder withTitle(String title) {
             this.title = title;
+            return this;
         }
 
-        public SongBuilder withGenre(String genre) {
-            this.genre = genre;
+        public Builder withArtist(String artist) {
+            this.artist = artist;
+            return this;
         }
 
-        public SongBuilder withReleaseDate(Date releaseDate) {
-            this.releaseDate = releaseDate;
-        }
-
-        public SongBuilder withTrackLength(Time trackLength) {
-            this.trackLength = trackLength;
-        }
-
-        public SongBuilder withAlbum(String album) {
+        public Builder withAlbum(String album) {
             this.album = album;
+            return this;
+        }
+
+        public Builder withGenre(String genre) {
+            this.genre = genre;
+            return this;
+        }
+
+        public Builder withYear(Integer year) {
+            this.year = year;
+            return this;
+        }
+
+        public Builder withDuration(Integer duration) {
+            this.duration = duration;
+            return this;
         }
 
         public Song build() {
             return new Song(
                 this.id, 
-                this.title, 
+                this.title,
+                this.artist,
+                this.album, 
                 this.genre, 
-                this.releaseDate, 
-                this.trackLength, 
-                this.album);
+                this.year, 
+                this.duration);
         }
     }
     
